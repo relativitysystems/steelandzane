@@ -611,6 +611,147 @@ a {
   }
 }
 
+/* ===== BOOKING PAGE ===== */
+.book-hero {
+  background: var(--navy);
+  padding: 140px 24px 80px;
+  text-align: center;
+}
+
+.book-hero-eyebrow {
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+
+.book-hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.book-hero-body {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.book-form-section {
+  background: var(--off-white);
+  padding: 72px 24px 96px;
+}
+
+.book-form-inner {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.question-group {
+  margin-bottom: 44px;
+}
+
+.question-label {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 16px;
+}
+
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.option-card {
+  position: relative;
+}
+
+.option-card input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.option-card label {
+  display: block;
+  padding: 14px 18px;
+  background: var(--white);
+  border: 2px solid rgba(28, 24, 84, 0.14);
+  border-radius: 3px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--dark);
+  cursor: pointer;
+  transition: border-color 0.18s, background 0.18s, color 0.18s;
+  line-height: 1.4;
+  user-select: none;
+}
+
+.option-card label:hover {
+  border-color: var(--gold);
+}
+
+.option-card input[type="radio"]:checked + label {
+  border-color: var(--gold);
+  background: var(--navy);
+  color: var(--white);
+}
+
+.option-card--wide {
+  grid-column: 1 / -1;
+}
+
+.field-error {
+  display: none;
+  font-family: var(--font-heading);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #b52a2a;
+  margin-top: 10px;
+  text-transform: uppercase;
+}
+
+.field-error.visible {
+  display: block;
+}
+
+.book-submit-wrap {
+  margin-top: 52px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.btn-book-submit {
+  min-width: 240px;
+}
+
+.book-note {
+  font-size: 14px;
+  color: var(--gray);
+  font-style: italic;
+  line-height: 1.5;
+}
+
+
+/* ===== RESPONSIVE ===== */
 @media (max-width: 640px) {
   .header-inner {
     padding: 0 20px;
@@ -658,5 +799,26 @@ a {
 
   .contact-inner {
     padding: 60px 20px;
+  }
+
+  .book-hero {
+    padding: 120px 24px 56px;
+  }
+
+  .options-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .option-card--wide {
+    grid-column: auto;
+  }
+
+  .book-submit-wrap {
+    align-items: stretch;
+  }
+
+  .btn-book-submit {
+    text-align: center;
+    width: 100%;
   }
 }
