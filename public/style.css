@@ -822,3 +822,116 @@ a {
     width: 100%;
   }
 }
+
+
+/* ===== MARKETING SELECTOR PAGE (choose.html) ===== */
+
+.choose-section {
+  background: var(--off-white);
+  padding: 72px 24px 96px;
+  min-height: calc(100vh - 72px);
+}
+
+.choose-grid {
+  max-width: 980px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: stretch;
+}
+
+.choose-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  border-radius: 4px;
+  box-shadow: 0 2px 12px rgba(28,24,84,0.08);
+  overflow: hidden;
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.choose-card:hover,
+.choose-card:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 32px rgba(28,24,84,0.18);
+  outline: none;
+}
+
+/* Placeholder image area — swap this div for an <img> when you have photos */
+.choose-card-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--cream);
+  border-bottom: 2px dashed rgba(28,24,84,0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.choose-card-image-label {
+  font-family: var(--font-heading);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(28,24,84,0.4);
+  text-align: center;
+  padding: 0 16px;
+}
+
+.choose-card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 36px 32px 40px;
+  gap: 16px;
+}
+
+.choose-card-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.3rem, 2.2vw, 1.7rem);
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.2;
+}
+
+.choose-card-desc {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--dark);
+  flex: 1;
+}
+
+/* pointer-events: none so the parent <a> handles all clicks */
+.choose-card-btn {
+  display: inline-block;
+  align-self: flex-start;
+  pointer-events: none;
+  margin-top: 8px;
+}
+
+@media (max-width: 900px) {
+  .choose-grid {
+    grid-template-columns: 1fr;
+    max-width: 560px;
+  }
+}
+
+@media (max-width: 640px) {
+  .choose-section {
+    padding: 48px 16px 72px;
+  }
+
+  .choose-card-body {
+    padding: 28px 24px 32px;
+  }
+
+  .choose-card-btn {
+    align-self: stretch;
+    text-align: center;
+  }
+}
