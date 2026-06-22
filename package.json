@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "vercel dev"
+    "start": "http-server public -p 3000"
   },
   "dependencies": {
     "nodemailer": "^6.9.14"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
   }
 }
