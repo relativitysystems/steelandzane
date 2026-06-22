@@ -6,17 +6,28 @@
 }
 
 :root {
-  --navy: #1C1854;
-  --navy-dark: rgba(28, 24, 84, 0.95);
-  --gold: #CFB53B;
-  --gold-dark: #C6A105;
-  --white: #FFFFFF;
-  --cream: #E0DFCD;
-  --off-white: #FAFAFA;
-  --gray: #8F8F8F;
-  --dark: #34383D;
-  --font-heading: 'Montserrat', sans-serif;
-  --font-body: 'Varta', sans-serif;
+  /* Warm editorial palette */
+  --background:  #F7F1E8;
+  --cream:       #FFF9F0;
+  --text:        #25221D;
+  --muted:       #756D63;
+  --bronze:      #A9744F;
+  --bronze-dark: #8B5E3C;
+  --border:      #D8CBB9;
+  --dark:        #1E1A16;
+
+  /* Aliases — keep existing rules working without touching each one */
+  --navy:        #1E1A16;
+  --navy-dark:   rgba(30, 26, 22, 0.96);
+  --gold:        #A9744F;
+  --gold-dark:   #8B5E3C;
+  --white:       #FFF9F0;
+  --off-white:   #F7F1E8;
+  --gray:        #756D63;
+
+  /* Fonts */
+  --font-heading: 'Cormorant Garamond', serif;
+  --font-body:    'Manrope', sans-serif;
 }
 
 html {
@@ -26,8 +37,8 @@ html {
 body {
   font-family: var(--font-body);
   font-size: 16px;
-  color: var(--dark);
-  background: var(--white);
+  color: var(--text);
+  background: var(--background);
   line-height: 1.6;
 }
 
@@ -89,9 +100,9 @@ a {
 }
 
 .nav-link {
-  font-family: var(--font-heading);
-  font-size: 13px;
-  font-weight: 600;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--white);
@@ -99,20 +110,20 @@ a {
 }
 
 .nav-link:hover {
-  color: var(--gold);
+  color: var(--bronze);
 }
 
 .nav-cta {
   padding: 10px 22px;
-  border: 2px solid var(--gold);
+  border: 1px solid var(--bronze);
   border-radius: 2px;
-  color: var(--gold);
-  transition: background 0.2s, color 0.2s;
+  color: var(--bronze);
+  transition: background 0.25s, color 0.25s;
 }
 
 .nav-cta:hover {
-  background: var(--gold);
-  color: var(--navy);
+  background: var(--bronze);
+  color: var(--cream);
 }
 
 .nav-toggle {
@@ -142,27 +153,30 @@ a {
 /* ===== BUTTONS ===== */
 .btn {
   display: inline-block;
-  font-family: var(--font-heading);
-  font-size: 13px;
+  font-family: var(--font-body);
+  font-size: 12px;
   font-weight: 600;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  padding: 14px 36px;
+  padding: 14px 28px;
   border-radius: 2px;
   cursor: pointer;
-  border: none;
-  transition: background 0.2s, color 0.2s, transform 0.1s;
+  border: 1px solid var(--dark);
+  transition: background 0.25s, color 0.25s, border-color 0.25s, transform 0.1s;
 }
 
 .btn:active { transform: scale(0.98); }
 
 .btn-gold {
-  background: var(--gold);
-  color: var(--navy);
+  background: var(--dark);
+  color: var(--cream);
+  border-color: var(--dark);
 }
 
 .btn-gold:hover {
-  background: var(--gold-dark);
+  background: var(--bronze);
+  border-color: var(--bronze);
+  color: var(--cream);
 }
 
 
@@ -181,7 +195,7 @@ a {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(28, 24, 84, 0.62);
+  background: rgba(30, 26, 22, 0.52);
 }
 
 .hero-content {
@@ -192,30 +206,31 @@ a {
 }
 
 .hero-eyebrow {
-  font-family: var(--font-heading);
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.18em;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 18px;
+  color: var(--bronze);
+  margin-bottom: 20px;
 }
 
 .hero-title {
   font-family: var(--font-heading);
-  font-size: clamp(2rem, 4.5vw, 3.4rem);
-  font-weight: 700;
+  font-size: clamp(2.6rem, 5.5vw, 4.4rem);
+  font-weight: 300;
   color: var(--white);
-  line-height: 1.15;
-  margin-bottom: 24px;
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  margin-bottom: 28px;
 }
 
 .hero-body {
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.75;
-  color: rgba(255,255,255,0.88);
-  margin-bottom: 36px;
-  max-width: 560px;
+  color: rgba(255, 249, 240, 0.82);
+  margin-bottom: 40px;
+  max-width: 520px;
 }
 
 
@@ -256,10 +271,11 @@ a {
 
 .feature-title {
   font-family: var(--font-heading);
-  font-size: 17px;
-  font-weight: 700;
+  font-size: 18px;
+  font-weight: 600;
   color: var(--white);
   line-height: 1.3;
+  letter-spacing: -0.01em;
 }
 
 .feature-title .comma {
@@ -291,7 +307,7 @@ a {
 }
 
 .services-content {
-  background: var(--off-white);
+  background: var(--background);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -301,24 +317,26 @@ a {
 
 .services-title {
   font-family: var(--font-heading);
-  font-size: clamp(1.6rem, 2.8vw, 2.4rem);
-  font-weight: 700;
-  color: var(--navy);
-  line-height: 1.2;
+  font-size: clamp(1.8rem, 2.8vw, 2.6rem);
+  font-weight: 300;
+  color: var(--text);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
 }
 
 .services-subtitle {
-  font-family: var(--font-heading);
-  font-size: 17px;
-  font-weight: 600;
-  color: var(--gold-dark);
-  letter-spacing: 0.03em;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--bronze);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
 .services-body {
   font-size: 16px;
   line-height: 1.8;
-  color: var(--dark);
+  color: var(--muted);
 }
 
 
@@ -330,12 +348,12 @@ a {
 
 .section-title {
   font-family: var(--font-heading);
-  font-size: clamp(1.6rem, 3vw, 2.4rem);
-  font-weight: 700;
-  color: var(--navy);
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 300;
+  color: var(--text);
   text-align: center;
   margin-bottom: 56px;
-  letter-spacing: 0.02em;
+  letter-spacing: -0.02em;
 }
 
 .testimonials-grid {
@@ -347,38 +365,46 @@ a {
 }
 
 .testimonial-card {
-  background: var(--white);
-  border-radius: 4px;
+  background: var(--cream);
+  border-radius: 2px;
+  border: 1px solid var(--border);
   padding: 36px 28px 28px;
   display: flex;
   flex-direction: column;
   gap: 16px;
-  box-shadow: 0 2px 12px rgba(28,24,84,0.08);
+  box-shadow: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 60px rgba(37, 34, 29, 0.12);
 }
 
 .quote-mark {
-  font-family: Georgia, serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 72px;
   line-height: 0.6;
-  color: var(--gold);
+  color: var(--bronze);
   user-select: none;
 }
 
 .testimonial-text {
   font-family: var(--font-body);
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.8;
-  color: var(--dark);
+  color: var(--muted);
   flex: 1;
 }
 
 .testimonial-author {
-  font-family: var(--font-heading);
-  font-size: 14px;
-  font-weight: 400;
-  font-style: italic;
-  color: var(--gold-dark);
-  letter-spacing: 0.04em;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  font-style: normal;
+  color: var(--bronze);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   margin-top: 4px;
 }
 
@@ -394,7 +420,7 @@ a {
 .contact-bg {
   position: absolute;
   inset: 0;
-  background: rgba(28, 24, 84, 0.88);
+  background: rgba(30, 26, 22, 0.86);
 }
 
 .contact-inner {
@@ -412,16 +438,17 @@ a {
 .contact-title {
   font-family: var(--font-heading);
   font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-  font-weight: 700;
+  font-weight: 300;
   color: var(--white);
+  letter-spacing: -0.02em;
   margin-bottom: 12px;
 }
 
 .contact-subtitle {
   font-family: var(--font-heading);
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--gold);
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--bronze);
   margin-bottom: 20px;
 }
 
@@ -433,12 +460,12 @@ a {
 }
 
 .contact-label {
-  font-family: var(--font-heading);
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--bronze);
   margin-bottom: 10px;
 }
 
@@ -456,9 +483,10 @@ a {
 
 .form-title {
   font-family: var(--font-heading);
-  font-size: 1.3rem;
-  font-weight: 700;
+  font-size: 1.4rem;
+  font-weight: 300;
   color: var(--white);
+  letter-spacing: -0.01em;
   margin-bottom: 8px;
 }
 
@@ -619,34 +647,35 @@ a {
 }
 
 .book-hero-eyebrow {
-  font-family: var(--font-heading);
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.18em;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 16px;
+  color: var(--bronze);
+  margin-bottom: 18px;
 }
 
 .book-hero-title {
   font-family: var(--font-heading);
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 700;
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 300;
   color: var(--white);
-  line-height: 1.2;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
   margin-bottom: 16px;
 }
 
 .book-hero-body {
-  font-size: 17px;
-  color: rgba(255, 255, 255, 0.8);
+  font-size: 16px;
+  color: rgba(255, 249, 240, 0.75);
   max-width: 520px;
   margin: 0 auto;
-  line-height: 1.7;
+  line-height: 1.75;
 }
 
 .book-form-section {
-  background: var(--off-white);
+  background: var(--background);
   padding: 72px 24px 96px;
 }
 
@@ -661,12 +690,12 @@ a {
 
 .question-label {
   display: block;
-  font-family: var(--font-heading);
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--navy);
+  color: var(--text);
   margin-bottom: 16px;
 }
 
@@ -690,26 +719,26 @@ a {
 .option-card label {
   display: block;
   padding: 14px 18px;
-  background: var(--white);
-  border: 2px solid rgba(28, 24, 84, 0.14);
-  border-radius: 3px;
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: 2px;
   font-family: var(--font-body);
-  font-size: 15px;
-  color: var(--dark);
+  font-size: 14px;
+  color: var(--text);
   cursor: pointer;
-  transition: border-color 0.18s, background 0.18s, color 0.18s;
+  transition: border-color 0.2s, background 0.2s, color 0.2s;
   line-height: 1.4;
   user-select: none;
 }
 
 .option-card label:hover {
-  border-color: var(--gold);
+  border-color: var(--bronze);
 }
 
 .option-card input[type="radio"]:checked + label {
-  border-color: var(--gold);
-  background: var(--navy);
-  color: var(--white);
+  border-color: var(--bronze);
+  background: var(--dark);
+  color: var(--cream);
 }
 
 .option-card--wide {
@@ -744,8 +773,8 @@ a {
 }
 
 .book-note {
-  font-size: 14px;
-  color: var(--gray);
+  font-size: 13px;
+  color: var(--muted);
   font-style: italic;
   line-height: 1.5;
 }
@@ -827,7 +856,7 @@ a {
 /* ===== MARKETING SELECTOR PAGE (choose.html) ===== */
 
 .choose-section {
-  background: var(--off-white);
+  background: var(--background);
   padding: 72px 24px 96px;
   min-height: calc(100vh - 72px);
 }
@@ -844,20 +873,21 @@ a {
 .choose-card {
   display: flex;
   flex-direction: column;
-  background: var(--white);
-  border-radius: 4px;
-  box-shadow: 0 2px 12px rgba(28,24,84,0.08);
+  background: var(--cream);
+  border-radius: 2px;
+  border: 1px solid var(--border);
+  box-shadow: none;
   overflow: hidden;
   cursor: pointer;
   color: inherit;
   text-decoration: none;
-  transition: transform 0.22s ease, box-shadow 0.22s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .choose-card:hover,
 .choose-card:focus-visible {
   transform: translateY(-4px);
-  box-shadow: 0 10px 32px rgba(28,24,84,0.18);
+  box-shadow: 0 24px 60px rgba(37, 34, 29, 0.12);
   outline: none;
 }
 
@@ -865,20 +895,20 @@ a {
 .choose-card-image {
   width: 100%;
   aspect-ratio: 16 / 9;
-  background: var(--cream);
-  border-bottom: 2px dashed rgba(28,24,84,0.18);
+  background: var(--background);
+  border-bottom: 1px solid var(--border);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .choose-card-image-label {
-  font-family: var(--font-heading);
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(28,24,84,0.4);
+  color: var(--muted);
   text-align: center;
   padding: 0 16px;
 }
@@ -887,22 +917,23 @@ a {
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 36px 32px 40px;
+  padding: 40px 36px 44px;
   gap: 16px;
 }
 
 .choose-card-title {
   font-family: var(--font-heading);
-  font-size: clamp(1.3rem, 2.2vw, 1.7rem);
-  font-weight: 700;
-  color: var(--navy);
-  line-height: 1.2;
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
+  font-weight: 300;
+  color: var(--text);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
 }
 
 .choose-card-desc {
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.8;
-  color: var(--dark);
+  color: var(--muted);
   flex: 1;
 }
 

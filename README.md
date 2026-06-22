@@ -25,6 +25,60 @@ npm start       # runs: vercel dev
 
 Requires the [Vercel CLI](https://vercel.com/docs/cli) installed globally (`npm i -g vercel`).
 
+## Saving and deploying changes
+
+After making edits to any files, run these three commands in your terminal to save them to GitHub and trigger a live deploy:
+
+```bash
+git add .
+git commit -m "describe what you changed"
+git push
+```
+
+**What each command does:**
+
+| Command | What it does |
+|---------|--------------|
+| `git add .` | Stages all changed files, telling Git you want to include them in the next save |
+| `git commit -m "..."` | Saves a snapshot of your changes with a short description (replace the message with your own) |
+| `git push` | Uploads the commit to GitHub, which triggers Vercel to automatically redeploy your live site |
+
+> **Tip:** Run `git status` at any time to see which files have been changed but not yet committed.
+
+### Working with branches
+
+Branches let you make and test changes without touching the live site until you're ready.
+
+**See all branches:**
+```bash
+git branch
+```
+The branch with a `*` next to it is the one you're currently on.
+
+**Switch to an existing branch:**
+```bash
+git checkout branch-name
+```
+
+**Create a new branch and switch to it:**
+```bash
+git checkout -b new-branch-name
+```
+
+**Push a new branch to GitHub for the first time:**
+```bash
+git push -u origin new-branch-name
+```
+
+**Merge a branch into main when you're ready to go live:**
+```bash
+git checkout main
+git merge branch-name
+git push
+```
+
+> **Tip:** Always commit or stash your changes before switching branches, or Git will warn you that unsaved work may be overwritten.
+
 ## Deployment
 
 Push to the `main` branch. Vercel auto-deploys on every push (connected via GitHub integration).
