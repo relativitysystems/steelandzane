@@ -73,7 +73,7 @@ form.addEventListener('submit', async (e) => {
 
 // Fade-in on scroll using IntersectionObserver
 const fadeEls = document.querySelectorAll(
-  '.feature-card, .testimonial-card, .services-content, .contact-info, .contact-form-wrap'
+  '.testimonial-card, .services-content, .contact-info, .contact-form-wrap, .pillar-card, .portfolio-card, .process-step, .why-snz-inner, .cta-close-inner'
 );
 
 const observer = new IntersectionObserver((entries) => {
