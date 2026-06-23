@@ -283,10 +283,29 @@ a {
 
 .hero-content {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   max-width: 680px;
   padding: 120px 48px 80px;
   animation: hero-enter 0.9s ease forwards;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background-color: var(--terracotta);
+  mix-blend-mode: soft-light;
+  opacity: 0;
+  animation: hero-accent 18s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes hero-accent {
+  0%   { opacity: 0;    background-color: var(--terracotta); }
+  30%  { opacity: 0.32; background-color: var(--terracotta); }
+  70%  { opacity: 0.32; background-color: var(--olive);      }
+  100% { opacity: 0;    background-color: var(--olive);      }
 }
 
 @keyframes hero-enter {
