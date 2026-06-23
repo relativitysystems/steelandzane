@@ -1686,3 +1686,51 @@ a {
 @media (max-width: 640px) {
   .photo-diff { padding: 72px 24px; }
 }
+
+/* ===== TESTIMONIAL STRIP ===== */
+.testimonials-strip {
+  margin-top: 56px;
+  overflow: hidden;
+  border-top: 1px solid rgba(139, 90, 60, 0.12);
+  padding-top: 40px;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+}
+.testimonials-strip-track {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  animation: testimonials-scroll 55s linear infinite;
+}
+.testimonials-strip-track:hover { animation-play-state: paused; }
+.strip-card {
+  width: 300px;
+  flex-shrink: 0;
+  background: var(--white);
+  border: 1px solid rgba(139, 90, 60, 0.12);
+  padding: 24px 28px;
+}
+.strip-stars {
+  color: var(--bronze);
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  margin-bottom: 12px;
+}
+.strip-quote {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--text);
+  margin-bottom: 14px;
+  font-style: italic;
+}
+.strip-author {
+  font-size: 0.75rem;
+  color: var(--warm-stone);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+@keyframes testimonials-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
