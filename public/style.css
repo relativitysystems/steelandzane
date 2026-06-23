@@ -292,20 +292,32 @@ a {
 .hero::after {
   content: '';
   position: absolute;
-  inset: 0;
+  top: -100%;
+  left: 0;
+  width: 35%;
+  height: 300%;
   z-index: 2;
-  background-color: var(--terracotta);
-  mix-blend-mode: soft-light;
-  opacity: 0;
-  animation: hero-accent 18s ease-in-out infinite alternate;
   pointer-events: none;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(255, 250, 225, 0.03) 30%,
+    rgba(255, 253, 235, 0.11) 47%,
+    rgba(255, 255, 245, 0.16) 50%,
+    rgba(255, 253, 235, 0.11) 53%,
+    rgba(255, 250, 225, 0.03) 70%,
+    transparent 100%
+  );
+  transform: translateX(-150%) rotate(-12deg);
+  transform-origin: center center;
+  animation: hero-sweep 22s ease-in-out infinite;
+  animation-delay: 3s;
 }
 
-@keyframes hero-accent {
-  0%   { opacity: 0;    background-color: var(--terracotta); }
-  30%  { opacity: 0.32; background-color: var(--terracotta); }
-  70%  { opacity: 0.32; background-color: var(--olive);      }
-  100% { opacity: 0;    background-color: var(--olive);      }
+@keyframes hero-sweep {
+  0%   { transform: translateX(-150%) rotate(-12deg); }
+  32%  { transform: translateX(380%)  rotate(-12deg); }
+  100% { transform: translateX(380%)  rotate(-12deg); }
 }
 
 @keyframes hero-enter {
