@@ -1033,6 +1033,124 @@ a {
 }
 
 
+/* ===== CREDIBILITY STRIP ===== */
+.credibility {
+  background: var(--background);
+  padding: 64px 24px 56px;
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+}
+
+.credibility-stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 0 48px;
+}
+
+.stat-number {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+
+.stat-label {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.stat-divider {
+  width: 1px;
+  height: 48px;
+  background: var(--border);
+  flex-shrink: 0;
+}
+
+.credibility-label {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 28px;
+}
+
+/* Carousel */
+.brokerage-carousel {
+  overflow: hidden;
+  width: 100%;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+.brokerage-track {
+  display: flex;
+  align-items: center;
+  gap: 64px;
+  width: max-content;
+  animation: brokerage-scroll 28s linear infinite;
+}
+
+.brokerage-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes brokerage-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.brokerage-logo {
+  height: 30px;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: grayscale(1);
+  opacity: 0.5;
+  mix-blend-mode: multiply;
+  transition: opacity 0.2s;
+}
+
+.brokerage-logo:hover {
+  opacity: 0.85;
+}
+
+@media (max-width: 640px) {
+  .credibility-stats {
+    gap: 24px 0;
+  }
+
+  .stat-item {
+    padding: 0 28px;
+  }
+
+  .stat-divider {
+    height: 36px;
+  }
+
+  .brokerage-track {
+    gap: 40px;
+  }
+}
+
+
 /* ===== REPOSITIONED HOMEPAGE SECTIONS ===== */
 
 /* Hero actions row */
