@@ -89,3 +89,35 @@ fadeEls.forEach(el => {
   el.classList.add('fade-in');
   observer.observe(el);
 });
+
+// Count-up animation for credibility stats
+const statEls = document.querySelectorAll('.stat-number[data-target]');
+if (statEls.length) {
+  const countObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      countObserver.unobserve(entry.target);
+      const el = entry.target;
+      const target = parseInt(el.dataset.target);
+      const suffix = el.dataset.suffix || '';
+      const useComma = el.dataset.comma === 'true';
+      const duration = 1800;
+      const start = performance.now();
+      function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
+      function tick(now) {
+        const progress = Math.min((now - start) / duration, 1);
+        const value = Math.round(easeOut(progress) * target);
+        el.textContent = (useComma ? value.toLocaleString() : value) + suffix;
+        if (progress < 1) {
+          requestAnimationFrame(tick);
+        } else {
+          el.textContent = (useComma ? target.toLocaleString() : target) + suffix;
+          el.classList.add('stat-landed');
+        }
+      }
+      el.textContent = '0' + suffix;
+      requestAnimationFrame(tick);
+    });
+  }, { threshold: 0.5 });
+  statEls.forEach(el => countObserver.observe(el));
+}
