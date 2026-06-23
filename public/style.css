@@ -1112,6 +1112,26 @@ a {
   color: var(--bronze);
 }
 
+.stat-number-wrap {
+  display: flex;
+  align-items: flex-start;
+}
+
+.stat-suffix {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.1rem;
+  line-height: 1;
+  color: var(--text);
+  padding-top: 0.3em;
+  transition: color 0.4s ease;
+}
+
+.stat-landed + .stat-suffix,
+.stat-number-wrap:has(.stat-landed) .stat-suffix {
+  color: var(--bronze);
+}
+
 .stat-label {
   font-family: var(--font-body);
   font-size: 11px;
