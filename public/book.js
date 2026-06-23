@@ -51,8 +51,8 @@ siteNav.querySelectorAll('.nav-link').forEach(link => {
 const header = document.querySelector('.site-header');
 window.addEventListener('scroll', () => {
   header.style.background = window.scrollY > 40
-    ? 'rgba(28, 24, 84, 1)'
-    : 'rgba(28, 24, 84, 0.95)';
+    ? 'rgba(30, 26, 22, 1)'
+    : 'rgba(30, 26, 22, 0.96)';
 });
 
 // ─── BOOKING FORM ────────────────────────────────────────────────────────────
