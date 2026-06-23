@@ -1114,16 +1114,17 @@ a {
 
 .stat-number-wrap {
   display: flex;
-  align-items: flex-start;
+  align-items: baseline;
 }
 
 .stat-suffix {
   font-family: var(--font-heading);
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: clamp(2rem, 3.5vw, 3rem);
   line-height: 1;
   color: var(--text);
-  padding-top: 0.3em;
+  transform: scaleY(0.88);
+  transform-origin: center bottom;
   transition: color 0.4s ease;
 }
 
