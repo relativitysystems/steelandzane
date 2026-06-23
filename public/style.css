@@ -1,3 +1,62 @@
+/* ===== NEUTRAFACE TEXT (self-hosted) ===== */
+@font-face {
+  font-family: 'Neutraface Text';
+  src: url('fonts/neutraface/Neutraface Text Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Neutraface Text';
+  src: url('fonts/neutraface/Neutraface Text Light Italic.otf') format('opentype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Neutraface Text';
+  src: url('fonts/neutraface/Neutraface Text Book.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Neutraface Text';
+  src: url('fonts/neutraface/Neutraface Text Book Italic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Neutraface Text';
+  src: url('fonts/neutraface/Neutraface Text Demi.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Neutraface Text';
+  src: url('fonts/neutraface/Neutraface Text Demi Italic.otf') format('opentype');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Neutraface Text';
+  src: url('fonts/neutraface/Neutraface Text Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Neutraface Text';
+  src: url('fonts/neutraface/Neutraface Text Bold Italic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+
 /* ===== RESET & BASE ===== */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -26,8 +85,11 @@
   --gray:        #756D63;
 
   /* Fonts */
-  --font-heading: 'Cormorant Garamond', serif;
-  --font-body:    'Manrope', sans-serif;
+  --font-heading: 'Neutraface Text', sans-serif;
+  --font-body:    'Neutraface Text', sans-serif;
+
+  /* Sage accent — use sparingly: hover states, dividers, small labels */
+  --sage: #7A8A74;
 }
 
 html {
@@ -110,7 +172,7 @@ a {
 }
 
 .nav-link:hover {
-  color: var(--bronze);
+  color: var(--sage);
 }
 
 .nav-cta {
@@ -217,11 +279,11 @@ a {
 
 .hero-title {
   font-family: var(--font-heading);
-  font-size: clamp(2.6rem, 5.5vw, 4.4rem);
-  font-weight: 300;
+  font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+  font-weight: 600;
   color: var(--white);
-  line-height: 1.0;
-  letter-spacing: -0.02em;
+  line-height: 1.1;
+  letter-spacing: 0.01em;
   margin-bottom: 28px;
 }
 
@@ -317,11 +379,11 @@ a {
 
 .services-title {
   font-family: var(--font-heading);
-  font-size: clamp(1.8rem, 2.8vw, 2.6rem);
-  font-weight: 300;
+  font-size: clamp(1.6rem, 2.4vw, 2.2rem);
+  font-weight: 600;
   color: var(--text);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  line-height: 1.2;
+  letter-spacing: 0;
 }
 
 .services-subtitle {
@@ -348,12 +410,12 @@ a {
 
 .section-title {
   font-family: var(--font-heading);
-  font-size: clamp(1.8rem, 3vw, 2.6rem);
-  font-weight: 300;
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
+  font-weight: 600;
   color: var(--text);
   text-align: center;
   margin-bottom: 56px;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.02em;
 }
 
 .testimonials-grid {
@@ -382,8 +444,9 @@ a {
 }
 
 .quote-mark {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-heading);
   font-size: 72px;
+  font-weight: 300;
   line-height: 0.6;
   color: var(--bronze);
   user-select: none;
@@ -437,18 +500,19 @@ a {
 
 .contact-title {
   font-family: var(--font-heading);
-  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-  font-weight: 300;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 600;
   color: var(--white);
-  letter-spacing: -0.02em;
+  letter-spacing: 0.01em;
   margin-bottom: 12px;
 }
 
 .contact-subtitle {
   font-family: var(--font-heading);
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   font-weight: 400;
   color: var(--bronze);
+  letter-spacing: 0.04em;
   margin-bottom: 20px;
 }
 
@@ -483,10 +547,10 @@ a {
 
 .form-title {
   font-family: var(--font-heading);
-  font-size: 1.4rem;
-  font-weight: 300;
+  font-size: 1.2rem;
+  font-weight: 400;
   color: var(--white);
-  letter-spacing: -0.01em;
+  letter-spacing: 0.02em;
   margin-bottom: 8px;
 }
 
@@ -524,7 +588,7 @@ a {
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  border-color: var(--gold);
+  border-color: var(--sage);
   background: rgba(255,255,255,0.15);
 }
 
@@ -658,11 +722,11 @@ a {
 
 .book-hero-title {
   font-family: var(--font-heading);
-  font-size: clamp(2.2rem, 4vw, 3.2rem);
-  font-weight: 300;
+  font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+  font-weight: 600;
   color: var(--white);
-  line-height: 1.05;
-  letter-spacing: -0.02em;
+  line-height: 1.15;
+  letter-spacing: 0.01em;
   margin-bottom: 16px;
 }
 
@@ -923,11 +987,11 @@ a {
 
 .choose-card-title {
   font-family: var(--font-heading);
-  font-size: clamp(1.5rem, 2.4vw, 2rem);
-  font-weight: 300;
+  font-size: clamp(1.2rem, 1.8vw, 1.6rem);
+  font-weight: 600;
   color: var(--text);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  line-height: 1.2;
+  letter-spacing: 0;
 }
 
 .choose-card-desc {
