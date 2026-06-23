@@ -65,31 +65,32 @@
 }
 
 :root {
-  /* Warm editorial palette */
-  --background:  #F7F1E8;
-  --cream:       #FFF9F0;
-  --text:        #25221D;
-  --muted:       #756D63;
-  --bronze:      #A9744F;
-  --bronze-dark: #8B5E3C;
-  --border:      #D8CBB9;
-  --dark:        #1E1A16;
+  /* ── ARCHITECTURAL PALETTE ───────────────────────────────────────── */
+  --background:  #F4F0E8;   /* Plaster White  — primary canvas        */
+  --cream:       #F4F0E8;   /* Plaster White  — cards / sections       */
+  --text:        #2B2925;   /* Charcoal       — headlines / primary    */
+  --muted:       #6C665E;   /* Warm Stone     — body copy / support    */
+  --bronze:      #8C5A3C;   /* Walnut         — accent, use sparingly  */
+  --bronze-dark: #6E4530;   /* Walnut dark    — hover treatment         */
+  --border:      #D8D1C5;   /* Travertine     — borders / dividers      */
+  --dark:        #1F1C19;   /* Walnut Black   — footer / dark sections  */
+  --terracotta:  #B86A47;   /* Terracotta     — rare detail only        */
 
-  /* Aliases — keep existing rules working without touching each one */
-  --navy:        #1E1A16;
-  --navy-dark:   rgba(30, 26, 22, 0.96);
-  --gold:        #A9744F;
-  --gold-dark:   #8B5E3C;
-  --white:       #FFF9F0;
-  --off-white:   #F7F1E8;
-  --gray:        #756D63;
+  /* ── ALIASES (keep existing rules working) ──────────────────────── */
+  --navy:        #1F1C19;
+  --navy-dark:   rgba(31, 28, 25, 0.96);
+  --gold:        #8C5A3C;
+  --gold-dark:   #6E4530;
+  --white:       #F4F0E8;
+  --off-white:   #F4F0E8;
+  --gray:        #6C665E;
 
-  /* Fonts */
+  /* ── ACCENT (olive — nav hover / form focus only) ───────────────── */
+  --sage:        #717A64;   /* Olive — extremely sparingly              */
+
+  /* ── FONTS (unchanged) ──────────────────────────────────────────── */
   --font-heading: 'Neutraface Text', sans-serif;
   --font-body:    'Neutraface Text', sans-serif;
-
-  /* Sage accent — use sparingly: hover states, dividers, small labels */
-  --sage: #7A8A74;
 }
 
 html {
@@ -177,15 +178,15 @@ a {
 
 .nav-cta {
   padding: 10px 22px;
-  border: 1px solid var(--bronze);
+  border: 1px solid var(--white);
   border-radius: 2px;
-  color: var(--bronze);
+  color: var(--white);
   transition: background 0.25s, color 0.25s;
 }
 
 .nav-cta:hover {
-  background: var(--bronze);
-  color: var(--cream);
+  background: var(--white);
+  color: var(--dark);
 }
 
 .nav-toggle {
@@ -257,7 +258,7 @@ a {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(30, 26, 22, 0.52);
+  background: rgba(31, 28, 25, 0.52);
 }
 
 .hero-content {
@@ -290,7 +291,7 @@ a {
 .hero-body {
   font-size: 16px;
   line-height: 1.75;
-  color: rgba(255, 249, 240, 0.82);
+  color: rgba(244, 240, 232, 0.82);
   margin-bottom: 40px;
   max-width: 520px;
 }
@@ -440,7 +441,7 @@ a {
 
 .testimonial-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 24px 60px rgba(37, 34, 29, 0.12);
+  box-shadow: 0 24px 60px rgba(43, 41, 37, 0.12);
 }
 
 .quote-mark {
@@ -483,7 +484,7 @@ a {
 .contact-bg {
   position: absolute;
   inset: 0;
-  background: rgba(30, 26, 22, 0.86);
+  background: rgba(31, 28, 25, 0.86);
 }
 
 .contact-inner {
@@ -732,7 +733,7 @@ a {
 
 .book-hero-body {
   font-size: 16px;
-  color: rgba(255, 249, 240, 0.75);
+  color: rgba(244, 240, 232, 0.75);
   max-width: 520px;
   margin: 0 auto;
   line-height: 1.75;
@@ -951,7 +952,7 @@ a {
 .choose-card:hover,
 .choose-card:focus-visible {
   transform: translateY(-4px);
-  box-shadow: 0 24px 60px rgba(37, 34, 29, 0.12);
+  box-shadow: 0 24px 60px rgba(43, 41, 37, 0.12);
   outline: none;
 }
 
