@@ -1118,8 +1118,8 @@ a {
 }
 
 .brokerage-logo {
-  height: 30px;
-  width: auto;
+  width: 120px;
+  height: 36px;
   object-fit: contain;
   flex-shrink: 0;
   filter: grayscale(1);
