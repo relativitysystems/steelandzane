@@ -71,24 +71,19 @@ form.addEventListener('submit', async (e) => {
   }
 });
 
-// Fade-in on scroll using IntersectionObserver
-const fadeEls = document.querySelectorAll(
-  '.testimonial-card, .services-content, .contact-info, .contact-form-wrap, .pillar-card, .portfolio-card, .process-step, .why-snz-inner, .cta-close-inner'
-);
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.12 });
-
-fadeEls.forEach(el => {
-  el.classList.add('fade-in');
-  observer.observe(el);
-});
+// Scroll reveal — fires once per element when it enters the viewport
+const revealEls = document.querySelectorAll('.reveal, .reveal-pop, .reveal-fade');
+if (revealEls.length) {
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const delay = entry.target.dataset.delay ? parseInt(entry.target.dataset.delay) * 100 : 0;
+      setTimeout(() => entry.target.classList.add('is-visible'), delay);
+      revealObserver.unobserve(entry.target);
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => revealObserver.observe(el));
+}
 
 // Count-up animation for credibility stats
 const statEls = document.querySelectorAll('.stat-number[data-target]');
