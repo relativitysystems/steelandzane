@@ -94,6 +94,7 @@ if (statEls.length) {
       countObserver.unobserve(entry.target);
       const el = entry.target;
       const target = parseInt(el.dataset.target);
+      const prefix = el.dataset.prefix || '';
       const suffix = el.dataset.suffix || '';
       const useComma = el.dataset.comma === 'true';
       const duration = 1800;
@@ -102,15 +103,15 @@ if (statEls.length) {
       function tick(now) {
         const progress = Math.min((now - start) / duration, 1);
         const value = Math.round(easeOut(progress) * target);
-        el.textContent = (useComma ? value.toLocaleString() : value) + suffix;
+        el.textContent = prefix + (useComma ? value.toLocaleString() : value) + suffix;
         if (progress < 1) {
           requestAnimationFrame(tick);
         } else {
-          el.textContent = (useComma ? target.toLocaleString() : target) + suffix;
+          el.textContent = prefix + (useComma ? target.toLocaleString() : target) + suffix;
           el.classList.add('stat-landed');
         }
       }
-      el.textContent = '0' + suffix;
+      el.textContent = prefix + '0' + suffix;
       requestAnimationFrame(tick);
     });
   }, { threshold: 0.5 });
