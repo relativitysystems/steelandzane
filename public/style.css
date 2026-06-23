@@ -1605,3 +1605,62 @@ a {
     text-align: center;
   }
 }
+
+/* ===== PHOTOGRAPHY DIFFERENCE ===== */
+.photo-diff {
+  background: var(--charcoal-black);
+  padding: 96px 48px;
+}
+
+.photo-diff-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.photo-diff-header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 64px;
+}
+
+.photo-diff-intro {
+  color: var(--travertine);
+  font-size: 1.05rem;
+  margin-top: 16px;
+  line-height: 1.6;
+}
+
+.photo-diff-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+}
+
+.photo-diff-pillar {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: 32px;
+}
+
+.photo-diff-title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--plaster);
+  margin-bottom: 14px;
+  letter-spacing: 0.01em;
+}
+
+.photo-diff-body {
+  color: var(--warm-stone);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  .photo-diff { padding: 80px 32px; }
+  .photo-diff-grid { grid-template-columns: 1fr; gap: 36px; }
+}
+
+@media (max-width: 640px) {
+  .photo-diff { padding: 72px 24px; }
+}
