@@ -88,6 +88,13 @@
   /* ── ACCENT (olive — nav hover / form focus only) ───────────────── */
   --sage:        #717A64;   /* Olive — extremely sparingly              */
 
+  /* ── SEMANTIC ALIASES (planned components) ──────────────────────── */
+  --plaster:        #F4F0E8;   /* = --white / --background              */
+  --charcoal-black: #1F1C19;   /* = --dark / --navy                     */
+  --warm-stone:     #6C665E;   /* = --muted / --gray                    */
+  --travertine:     #D8D1C5;   /* = --border                            */
+  --olive:          #717A64;   /* = --sage                              */
+
   /* ── FONTS (unchanged) ──────────────────────────────────────────── */
   --font-heading: 'Neutraface Text', sans-serif;
   --font-body:    'Neutraface Text', sans-serif;
