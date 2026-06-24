@@ -1755,3 +1755,38 @@ a {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
 }
+
+/* ── Cursor follower (desktop only) ── */
+@media (pointer: fine) {
+  body, a, button { cursor: none; }
+
+  .cursor-dot {
+    position: fixed;
+    width: 6px;
+    height: 6px;
+    background: var(--bronze);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .cursor-ring {
+    position: fixed;
+    width: 28px;
+    height: 28px;
+    border: 1.5px solid var(--bronze);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: width 0.2s ease, height 0.2s ease, opacity 0.3s ease;
+  }
+
+  .cursor-dot.is-visible  { opacity: 1; }
+  .cursor-ring.is-visible { opacity: 0.55; }
+  .cursor-ring.is-hovered { width: 48px; height: 48px; opacity: 0.85; }
+}
