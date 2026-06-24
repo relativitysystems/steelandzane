@@ -117,39 +117,3 @@ if (statEls.length) {
   }, { threshold: 0.5 });
   statEls.forEach(el => countObserver.observe(el));
 }
-
-// Cursor follower (desktop only)
-if (window.matchMedia('(pointer: fine)').matches) {
-  const cursorDot  = document.querySelector('.cursor-dot');
-  const cursorRing = document.querySelector('.cursor-ring');
-  if (cursorDot && cursorRing) {
-    let mx = 0, my = 0, rx = 0, ry = 0;
-
-    document.addEventListener('mousemove', e => {
-      mx = e.clientX; my = e.clientY;
-      cursorDot.style.left = mx + 'px';
-      cursorDot.style.top  = my + 'px';
-      cursorDot.classList.add('is-visible');
-      cursorRing.classList.add('is-visible');
-    });
-
-    document.addEventListener('mouseleave', () => {
-      cursorDot.classList.remove('is-visible');
-      cursorRing.classList.remove('is-visible');
-    });
-
-    document.querySelectorAll('a, button').forEach(el => {
-      el.addEventListener('mouseenter', () => cursorRing.classList.add('is-hovered'));
-      el.addEventListener('mouseleave', () => cursorRing.classList.remove('is-hovered'));
-    });
-
-    function lerp(a, b, t) { return a + (b - a) * t; }
-    (function tick() {
-      rx = lerp(rx, mx, 0.12);
-      ry = lerp(ry, my, 0.12);
-      cursorRing.style.left = rx + 'px';
-      cursorRing.style.top  = ry + 'px';
-      requestAnimationFrame(tick);
-    })();
-  }
-}
